@@ -8,11 +8,31 @@
 
 import React from 'react';
 
+//material ui components
+import { Button, Typography } from '@material-ui/core'
+
+//material ui styles
+import { makeStyles } from '@material-ui/core/styles' 
+
+
+//makesStyles takes inherited theme
+const useStyles = makeStyles( theme => ({
+    buttonStyle: {
+
+    }
+}));
+
 export default function Tournament() {
     return(
         <>
-            <h1> Tournament Tracker </h1>
-            <button> Hello </button>
+            <h1 /> Tournament Tracker <h1/>
+            <Typography color="primary"> Tournament Tracker </Typography>
+            <Button 
+                variant="contained" 
+                color="primary"
+            >
+                 Hello 
+            </Button>
         </>
     );
 }
