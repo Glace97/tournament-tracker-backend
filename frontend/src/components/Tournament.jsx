@@ -8,31 +8,25 @@
 
 import React from 'react';
 
-//material ui components
-import { Button, Typography } from '@material-ui/core'
 
 //material ui styles
-import { makeStyles } from '@material-ui/core/styles' 
+import { makeStyles } from '@material-ui/core/styles'
+
 
 
 //makesStyles takes inherited theme
-const useStyles = makeStyles( theme => ({
+const useStyles = makeStyles(theme => ({
     buttonStyle: {
 
     }
 }));
 
+
+//todo: flytta generic title till frontpage jsx
+//få iconen se mer centrerad ut, kaos
+
 export default function Tournament() {
-    return(
-        <>
-            <h1 /> Tournament Tracker <h1/>
-            <Typography color="primary"> Tournament Tracker </Typography>
-            <Button 
-                variant="contained" 
-                color="primary"
-            >
-                 Hello 
-            </Button>
-        </>
+    return (
+<></>
     );
 }

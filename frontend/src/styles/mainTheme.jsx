@@ -8,13 +8,15 @@ const mainTheme = createMuiTheme({
             main: "#A5BE00" //limeRick
         }, 
         secondary: { 
-            main: "#EBF2FA" //anti-flash white
+            main: "#FAFAFA" 
         },
 
-        backgroundColor: {
-          default:  "#ffffff"
-        }
+        /*
+        background: {
+            default:   //anti-flash white
+        },*/
     },
+
 
 });
 
