@@ -2,23 +2,27 @@
 import { Typography } from '@material-ui/core';
 
 //icons
-import SportsBaseballIcon from '@material-ui/icons/SportsBaseball';
+import SportsTennisIcon from '@material-ui/icons/SportsTennis';
 
+
+//to do: 1. fixa ikonen
+//2. FLYTT NER TITEL
 
 export default function GenericTitle() {
     return (
-        <>
+        <div style={{marginTop: '50px', marginBottom: '10px'}}>
             <Typography
                 variant="h4"
                 align="centered"
+                color="secondary"
             >
                 Tournament Tracker
-        <SportsBaseballIcon
+                <SportsTennisIcon
                     color="primary"
                     fontSize="Large"
                 />
             </Typography>
-        </>
+        </div>
     );
 }
 

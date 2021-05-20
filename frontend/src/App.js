@@ -6,7 +6,6 @@ import  mainTheme  from './styles/mainTheme'
 
 //components
 import Frontpage from './components/Frontpage';
-import FullWidthGrid from './components/FullWidthGrid';
 
 function App() {
   return (   

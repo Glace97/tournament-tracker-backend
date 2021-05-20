@@ -5,29 +5,29 @@
 
 //components  (to be moved sen)
 import GenericTitle from './GenericTitle';
-
+import Tournament from './Tournament';
 
 //material ui components
-import { Button, Grid } from '@material-ui/core'
+import { Grid, List, ListItem } from '@material-ui/core'
+
+//Hook för att gå igenom alla tournaments
 
 
 
 export default function Frontpage() {
+    const name = "Audi JulCup" //for testpurpose
+
     return (
         <div >
-            <Grid container spacing={3} alignItems="center" direction="column"> 
+            <Grid container spacing={3} alignItems="center" direction="column">
                 <Grid item xs={12} alignItems="center">
                     <GenericTitle />
                 </Grid>
                 <Grid item xs={12} alignItems="center">
-                    <Button
-                        variant="contained"
-                        color="primary"
-                    >
-                        Hello
-                </Button>
+                    <Tournament name={name} />
                 </Grid>
             </Grid>
         </div>
     );
 }
+

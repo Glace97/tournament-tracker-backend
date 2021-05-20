@@ -8,10 +8,11 @@
 
 import React from 'react';
 
+//material ui components
+import { Button, Paper } from '@material-ui/core'
 
 //material ui styles
 import { makeStyles } from '@material-ui/core/styles'
-
 
 
 //makesStyles takes inherited theme
@@ -22,11 +23,17 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-//todo: flytta generic title till frontpage jsx
-//få iconen se mer centrerad ut, kaos
 
-export default function Tournament() {
+export default function Tournament({ name }) {
     return (
-<></>
+        <Paper elevation={4}>
+            <Button
+                variant="outlined"
+                color="primary"
+                style={{ minWidth: '300px', minHeight: '60px', fontSize: '1.5rem', fontWeight: '500', backgroundColor: '#FFFFFF' }}
+            >
+                {name}
+            </Button>
+        </Paper>
     );
 }
