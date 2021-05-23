@@ -8,6 +8,7 @@ import SchedulePage from "./SchedulePage";
 
 //redux
 import { useSelector } from 'react-redux';
+import FrontPage from "./FrontPage";
 
 
 export default function SwitchPages() {    
@@ -18,6 +19,9 @@ export default function SwitchPages() {
 
    return (
         <Switch>
+            <Route path="/">
+                <FrontPage/>
+            </Route>
             <Route path={scheduleUrl}>   
                 <SchedulePage />
             </Route >
