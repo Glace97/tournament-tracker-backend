@@ -19,7 +19,7 @@ export default function FrontPage() {
             <Grid container spacing={2} alignItems="center" direction="column">
                 <Grid item xs={12} alignItems="center">
                     <div style={{marginTop: '120px', marginBottom: '430px'}}>
-                        <GenericTitle color="secondary"/>
+                        <GenericTitle/>
                     </div>
                 </Grid>
                 <FrontPageButtons/>

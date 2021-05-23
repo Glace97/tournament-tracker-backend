@@ -26,6 +26,9 @@ export default function SwitchPages() {
             <Route path="/tournaments">
                 <TournamenPage />
             </Route >
+            <Route path="/loginPage">
+             
+            </Route >
             <Route path="/">
                 <FrontPage/>
             </Route>

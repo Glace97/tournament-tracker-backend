@@ -7,8 +7,8 @@ const mainTheme = createMuiTheme({
         primary: {
             main: "#62c363" //green
         }, 
-        secondary: {
-            main: "#FFFFFF"
+        secondary: { 
+            main: "#9c9c9c"
         },
 
        

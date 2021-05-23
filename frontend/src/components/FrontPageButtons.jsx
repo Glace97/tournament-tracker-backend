@@ -1,4 +1,9 @@
-import { Grid, Button, Typography, Paper } from '@material-ui/core';
+//react imports
+import { useHistory } from 'react-router-dom';
+
+//material imports
+import { Grid, Button } from '@material-ui/core';
+
 
 
 //TODO: //2. Login knapp routa till loginpage
@@ -6,6 +11,9 @@ import { Grid, Button, Typography, Paper } from '@material-ui/core';
 //Ändra färg och font 
 
 export default function FrontPageButtons() {
+    
+    const history= useHistory();
+
     return (
         <>
             <Grid item xs={12} alignItems="center">
@@ -14,16 +22,18 @@ export default function FrontPageButtons() {
                     color="primary" 
                     style={{ minWidth: '200px', fontSize: '1.2rem', color:"#FFF0D7"}} 
                     disableRipple="true" 
+                    onClick={() => history.push("/tournaments")}
                 >
                     TOURNAMENTS
                 </Button>
             </Grid>
             <Grid item alignItems="center">
                 <Button 
-                    variant="outlined" 
+                    variant="contained" 
                     color="primary" 
-                    style={{ minWidth: '200px', fontSize: '1.2rem'}} 
-                    disableRipple="true"
+                    style={{ minWidth: '200px', fontSize: '1.2rem', color:"#FFF0D7"}} 
+                    disableRipple="false"
+                    onClick={() => history.push("/loginPage")}
                 >
                     LOGIN AS ADMIN
                 </Button>
