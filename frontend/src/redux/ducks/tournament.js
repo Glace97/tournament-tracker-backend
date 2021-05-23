@@ -8,9 +8,9 @@ export const tournament = (newValue) => ({
 });
 
 
-//initial state
+//initial state: borde vara ett tournament obj.
 const initialState = {
-    selectedTournament: ""  //en counter tillsvidare
+    selectedTournament: ""  
 };
 
 //reducer, implemented action modifying state
@@ -19,7 +19,7 @@ export default (state = initialState, action) => {
     switch(action.type) {
         case TOURNAMENT: 
             //add new state
-            return {...state, selectedTournament: action.payLoad };      //tillfället en incrementing counter
+            return {...state, selectedTournament: action.payLoad };      
         default:
             return state;
     }

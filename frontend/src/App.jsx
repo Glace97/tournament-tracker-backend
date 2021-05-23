@@ -5,16 +5,17 @@ import  mainTheme  from './styles/mainTheme'
 
 //components
 import TournamentPage from './components/TournamentPage';
+import SwitchPages from './components/SwitchPages';
 
-
-
+//switch router statements inom app?
+//switcha mellan following pages: login (admin), register (admin), tournaments, schedule
 
 function App() {
 
   return (   
     <MuiThemeProvider theme = {mainTheme}>
       <CssBaseline/>
-        <TournamentPage/>
+        <SwitchPages/>
     </MuiThemeProvider>
  
   );

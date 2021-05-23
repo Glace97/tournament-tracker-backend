@@ -1,5 +1,7 @@
 
+//react imports
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 //material ui components
 import { Button, Paper, Typography } from '@material-ui/core'
@@ -16,20 +18,28 @@ import { tournament } from '../redux/ducks/tournament'
 
 export default function Tournament({ name, id }) {
     
-    //get state from reducer, kanske inte behövs?
-    const selectedTournament = useSelector((state) => state.tournament.selectedTournament);
-    console.log("current tournament: " + selectedTournament)
+    //custom style obj for tournamentsheet
+    const classes = useStyles();
+
+    //get state from reducer, kanske inte behövs sen framöver?
+    const selectedTournament = useSelector((state) => state.tournament.selectedTournament); 
 
     //call any functions our duck has, ie dispatch an actions of (argument) type
     const dispatch = useDispatch();
+    
+    const history = useHistory(); 
 
-    //custom style obj for tournamentsheet onClick={() => dispatch(tournament())}
-    const classes = useStyles();
+    const handleClick = () => { 
+        //update current tournament obj state
+        dispatch(tournament(id));
+        console.log("current tournament: " + selectedTournament) //TA BORT
+        history.push(`/${id}/schedule`);    
+    };
 
 
     return (
         <div className={classes.root}>
-            <Paper elevation={4} onClick={() => dispatch(tournament(id))} >
+            <Paper elevation={4} onClick={handleClick} >
                 <Typography color="secondary" style={{ textAlign: 'center', fontSize: '1.5rem', fontWeight: '600' }}>
                     {name}
                 </Typography>
