@@ -19,15 +19,16 @@ export default function SwitchPages() {
 
    return (
         <Switch>
-            <Route path="/">
-                <FrontPage/>
-            </Route>
+
             <Route path={scheduleUrl}>   
                 <SchedulePage />
             </Route >
             <Route path="/tournaments">
                 <TournamenPage />
             </Route >
+            <Route path="/">
+                <FrontPage/>
+            </Route>
 
         </Switch>
     );

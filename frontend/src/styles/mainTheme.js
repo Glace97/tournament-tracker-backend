@@ -5,15 +5,15 @@ import { createMuiTheme } from '@material-ui/core/styles';
 const mainTheme = createMuiTheme({
     palette: {
         primary: {
-            main: "#37DEC4" //green
+            main: "#62c363" //green
         }, 
-        secondary: { 
-            main: "#BEBEBE" //grey
+        secondary: {
+            main: "#FFFFFF"
         },
 
        
         background: {
-            default: "#FFFFFF"   //anti-flash white
+            default: "#FFFFFF"   
         },
     },
 
