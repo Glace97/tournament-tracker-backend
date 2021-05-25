@@ -8,7 +8,7 @@ import SportsTennisIcon from '@material-ui/icons/SportsTennis';
 //to do: 1. fixa ikonen
 //2. FLYTT NER TITEL
 
-export default function GenericTitle() {
+export default function GenericTitle({title}) {
     return (
         <div style={{marginTop: '50px', marginBottom: '10px', fontWeight: 'bold'}}>
             <Typography
@@ -16,7 +16,7 @@ export default function GenericTitle() {
                 align="centered"
                 color="secondary"
             >
-                Tournament Tracker
+                {title}
                 <SportsTennisIcon
                     color="primary"
                     fontSize="Large"

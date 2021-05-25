@@ -35,7 +35,7 @@ export default function TournamentPage() {
         <div >
             <Grid container spacing={2} alignItems="center" direction="column">
                 <Grid item xs={12} alignItems="center">
-                    <GenericTitle color="secondary"/>
+                    <GenericTitle title="Tournament Tracker"/>
                 </Grid>
                 <Grid item xs={12} alignItems="center">
                     {tournaments.map((tournament) => 

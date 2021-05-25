@@ -5,7 +5,7 @@ import '../styles/frontpage.css';
 
 //components
 import GenericTitle from './GenericTitle';
-import FrontPageButtons from './FrontPageButtons';
+import FrontPageButton from './FrontPageButton';
 
 //material ui
 import { Grid, Button, Typography } from '@material-ui/core';
@@ -18,11 +18,13 @@ export default function FrontPage() {
         <div class="background">
             <Grid container spacing={2} alignItems="center" direction="column">
                 <Grid item xs={12} alignItems="center">
-                    <div style={{marginTop: '120px', marginBottom: '430px'}}>
-                        <GenericTitle/>
+                    {/*Some extra padding for style*/}
+                    <div style={{marginTop: '120px', marginBottom: '430px'}}> 
+                        <GenericTitle title="Tournament Tracker"/>
                     </div>
                 </Grid>
-                <FrontPageButtons/>
+                <FrontPageButton title="TOURNAMENTS" link="/tournaments"/>
+                <FrontPageButton title="LOGIN AS ADMIN" link="/loginPage"/>
             </Grid>
         </div>
     );
