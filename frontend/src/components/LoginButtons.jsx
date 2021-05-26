@@ -5,10 +5,28 @@ import { Grid, Button, TextField, InputAdornment, Typography } from '@material-u
 
 
 //GÖR MER GENERISK
+// 1. skicka ner variant, 2. skicka ner vad som händer onclick
 
-export default function LoginButtons() {
+export default function LoginButtons({variant, title, submit, color}) {
+    console.log(color);
     return (
-        <>
+        <Grid item xs={12} >
+            <Button 
+                variant={variant} 
+                color="primary" 
+                style={{ minWidth: '226px', fontSize: '1.1rem', color: color}}   
+                onClick={submit}
+            >
+                {title}  
+            </Button>
+        </Grid>
+
+    );
+}
+
+
+/*
+
             <Grid item xs={12} >
                 <Button variant="contained" color="primary" style={{ minWidth: '150px', fontSize: '1.0rem', color: "#FFF0D7" }}>
                     Log in
@@ -24,7 +42,5 @@ export default function LoginButtons() {
                     Create Account
                 </Button>
             </Grid>
-        </>
 
-    );
-}
+*/

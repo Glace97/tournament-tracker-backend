@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 //material ui comoponents
 import { Grid, Button, TextField, InputAdornment, Typography } from '@material-ui/core';
@@ -10,7 +10,7 @@ import { AccountCircle, Lock, SportsTennis } from '@material-ui/icons/';
 import useStyles from '../styles/loginTheme'
 import GenericTitle from './GenericTitle';
 import LoginButtons from './LoginButtons';
-import EmailField from './EmailField';
+import LoginForm from './LoginForm';
 
 
 //TODO:
@@ -22,46 +22,54 @@ export default function LoginPage() {
 
     //style
     const classes = useStyles();
-   
+
     //local variables used for onChange variables instead of redux.
     const [email, updateEmail] = useState('');
     const [validEmail, setValidEmail] = useState(true);
+    const [pwd, updatePwd] = useState('');
+    const [validPwd, setValidPwd] = useState(true);
 
     //TEST TOGGLE error. FUNKAR INTE UTE USEEFFECT
-    if (email ===  "hej" ) {
-        setValidEmail(!validEmail);
-    }
+    /*
+      useEffect(() =>{
+          if (email ===  "hej" ) {
+              setValidEmail(!validEmail);
+          }
+      }, [])
+  */
 
     return (
         <Grid container spacing={2} alignItems="center" direction="column">
             <Grid item xs={12} alignItems="center">
                 <GenericTitle title="Sign in" />
             </Grid>
-            <EmailField 
-                email={email} 
+            <LoginForm
+                email={email}
                 updateEmail={updateEmail}
                 validEmail={validEmail}
+                pwd={pwd}
+                updatePwd={updatePwd}
+                validPwd={validPwd}
             />
-            <LoginButtons/>
+            <LoginButtons
+                variant="contained"
+                title="LOG IN"
+                submit={() => console.log("submition succeeded")}
+                color='#FFF0D7'
+            />
+            <LoginButtons
+                variant="contained"
+                title="Forgot Password"
+                submit={() => console.log("submition succeeded")}
+                color='#FFF0D7'
+            />
+            <LoginButtons
+                variant="outlined"
+                title="REGISTER"
+                submit={() => console.log("submition succeeded")}
+                color='primary'
+            />
         </Grid>
     );
 
 }
-
-/*
-            <Grid container spacing={1} alignItems="flex-end">
-                <Grid item>
-                    <AccountCircle />
-                </Grid>
-                <Grid item>
-                    <TextField label="Email" />
-                </Grid>
-            </Grid>
-            <Grid container spacing={1} alignItems="flex-end">
-                <Grid item>
-                    <Lock />
-                </Grid>
-                <Grid item>
-                    <TextField label="Password" type="password" />
-                </Grid>
-            </Grid>*/
