@@ -20,7 +20,6 @@ export default function SwitchPages() {
 
    return (
         <Switch>
-
             <Route path={scheduleUrl}>   
                 <SchedulePage />
             </Route >
@@ -33,7 +32,6 @@ export default function SwitchPages() {
             <Route path="/">
                 <FrontPage />
             </Route>
-
         </Switch>
     );
 }

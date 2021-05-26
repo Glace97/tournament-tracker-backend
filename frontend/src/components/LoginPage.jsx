@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 //material ui comoponents
 import { Grid, Button, TextField, InputAdornment, Typography } from '@material-ui/core';
@@ -22,13 +22,26 @@ export default function LoginPage() {
 
     //style
     const classes = useStyles();
+   
+    //local variables used for onChange variables instead of redux.
+    const [email, updateEmail] = useState('');
+    const [validEmail, setValidEmail] = useState(true);
+
+    //TEST TOGGLE error. FUNKAR INTE UTE USEEFFECT
+    if (email ===  "hej" ) {
+        setValidEmail(!validEmail);
+    }
 
     return (
         <Grid container spacing={2} alignItems="center" direction="column">
             <Grid item xs={12} alignItems="center">
                 <GenericTitle title="Sign in" />
             </Grid>
-            <EmailField/>
+            <EmailField 
+                email={email} 
+                updateEmail={updateEmail}
+                validEmail={validEmail}
+            />
             <LoginButtons/>
         </Grid>
     );
