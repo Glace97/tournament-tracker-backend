@@ -32,8 +32,8 @@ export default function Tournament({ name, id }) {
 
     return (
         <div className={classes.root}>
-            <Paper elevation={4} onClick={handleClick} >
-                <Typography color="secondary" style={{ textAlign: 'center', fontSize: '1.5rem', fontWeight: '600' }}>
+            <Paper elevation={4} onClick={handleClick} style={{background: '#7ee07f'}}>
+                <Typography color="secondary" style={{ textAlign: 'center', fontSize: '1.5rem', fontWeight: '400', color: '#FFF0D7'}}>
                     {name}
                 </Typography>
             </Paper>
