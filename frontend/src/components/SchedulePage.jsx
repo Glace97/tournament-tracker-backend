@@ -5,20 +5,21 @@ import React from 'react';
 //material ui components
 import {Paper, Tabs, Tab} from '@material-ui/core';
 
+import Game from './Game';
+
 export default function SchedulePage() {
 
+    //value -> index of tab. 
     const [value, setValue] = React.useState(0);
-  
-    const handleChange = (event, newValue) => {
-      setValue(newValue);
-    };
     
-    
+    console.log("value: " + value);
+
     return (
+        <>
         <Paper>
             <Tabs
                 value={value}
-                onChange={handleChange}
+                onChange={(event, newValue) => { setValue(newValue)}}
                 indicatorColor="primary"
                 textColor="primary"
                 centered
@@ -28,6 +29,8 @@ export default function SchedulePage() {
                 <Tab label="Upcoming" />
             </Tabs>
         </Paper>
+       <Game/>
+        </>
     );
 }
 
