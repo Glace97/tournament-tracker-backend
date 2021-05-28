@@ -1,12 +1,33 @@
 //contains finished, current and upcoming match
-//Show after tournament is chosen
-
 import React from 'react';
 
 
-export default function SchedulePage(){
-    return(
-        <button> HELLO </button>
+//material ui components
+import {Paper, Tabs, Tab} from '@material-ui/core';
+
+export default function SchedulePage() {
+
+    const [value, setValue] = React.useState(0);
+  
+    const handleChange = (event, newValue) => {
+      setValue(newValue);
+    };
+    
+    
+    return (
+        <Paper>
+            <Tabs
+                value={value}
+                onChange={handleChange}
+                indicatorColor="primary"
+                textColor="primary"
+                centered
+            >
+                <Tab label="Finished" />
+                <Tab label="Current" />
+                <Tab label="Upcoming" />
+            </Tabs>
+        </Paper>
     );
 }
 

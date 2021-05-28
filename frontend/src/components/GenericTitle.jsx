@@ -6,7 +6,6 @@ import SportsTennisIcon from '@material-ui/icons/SportsTennis';
 
 
 //to do: 1. fixa ikonen
-//2. FLYTT NER TITEL
 
 export default function GenericTitle({title}) {
     return (

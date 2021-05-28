@@ -14,11 +14,9 @@ const initialState = {
 };
 
 //reducer, implemented action modifying state
-//if state is undefined, set to initial
 export default (state = initialState, action) => {
     switch(action.type) {
         case TOURNAMENT: 
-            //add new state
             return {...state, selectedTournament: action.payLoad };      
         default:
             return state;
