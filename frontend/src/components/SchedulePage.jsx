@@ -1,20 +1,21 @@
-//contains finished, current and upcoming games SHIFT mellan dessa
 
 import React from 'react';
-
 
 //material ui components
 import { Paper, Tabs, Tab } from '@material-ui/core';
 
-import Game from './FinishedGame';
+//components
+import FinishedGame from './FinishedGame';
+import CurrentGame from './CurrentGame';
 
+//contains finished, current and upcoming games
 export default function SchedulePage() {
 
-    //value -> index of tab. 
+    //value -> index of tab. Decides which card user wants displayed 
     const [value, setValue] = React.useState(0);
 
 
-    //moch data
+    //mock data
     const finished = [
         {
             class: "P12",
@@ -39,6 +40,24 @@ export default function SchedulePage() {
         }]
 
 
+    const playing = [{
+        class: "P12",
+        player1: "Aleksandar Mitic",
+        player2: "Oskar Nehlin",
+        court: "Bana 3",
+    },
+    {
+        class: "P12",
+        player1: "Aleksandar Mitic",
+        player2: "Oskar Nehlin",
+        court: "Bana 3",
+    },
+    {
+        class: "P12",
+        player1: "Aleksandar Mitic",
+        player2: "Oskar Nehlin",
+        court: "Bana 3",
+    }];
 
     return (
         <>
@@ -56,16 +75,28 @@ export default function SchedulePage() {
                 </Tabs>
             </Paper>
 
-            {/*VISA ENBART DENNA KOMPOMENTN OM CURRENT LABEL ÄR FINISHED*/}
-            {finished.map((finishedGame) =>
-                <Game
-                    playerOne={finishedGame.player1}
-                    playerTwo={finishedGame.player2}
-                    league={finishedGame.class}
-                    winner={finishedGame.winner}
-                    result={finishedGame.result}
-                />
-            )}
+            {/*only display games for specified tab*/}
+            {value == 0 ?
+                finished.map((finishedGame) =>
+                    <FinishedGame
+                        playerOne={finishedGame.player1}
+                        playerTwo={finishedGame.player2}
+                        league={finishedGame.class}
+                        winner={finishedGame.winner}
+                        result={finishedGame.result}
+                    />
+                ) : null
+            }
+
+            {value == 1 ? 
+                 playing.map((currentGame) =>
+                    <CurrentGame 
+                        player1={currentGame.player1}
+                        player2={currentGame.player2}
+                        court={currentGame.court}
+                        league={currentGame.class}
+                    />
+                 ) : null}
         </>
     );
 }
