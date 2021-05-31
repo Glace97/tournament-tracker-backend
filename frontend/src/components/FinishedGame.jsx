@@ -1,20 +1,13 @@
-//displays one specific game info between two players
-
-// TODO: 1. fixa utseende
-// a)        LEAGUE P12 
-//      Player 1      vs     Player 2
-// b)       3                  3
-// C)       1                  7 
-// make room for trophe and checkmark
-
+//display finished game info
 import React from 'react';
-
-
 //material UI componentes
 import { Card, Grid, Paper } from '@material-ui/core';
 
 //style
 import useStyles from '../styles/gameCardStyle';
+
+//icons
+import {TrophyFilled} from '@ant-design/icons'
 
 
 export default function Game({ playerOne, playerTwo, league, winner, result }) {
@@ -42,17 +35,23 @@ export default function Game({ playerOne, playerTwo, league, winner, result }) {
 
     return (
         <div className={classes.root}>
-            <Card elevation={3} style={{ padding: '20px' }}>
+            <Card elevation={12} style={{backgroundColor: '#6A9225', padding: '20px', fontWeight: '600', color:'#f7f7ed'}}>
                 <Grid container spacing={12} justify="space-between">
                     <Grid xs={6}> {league} </Grid>
                     <Grid item xs={6}> SETS </Grid>
 
-                    <Grid item xs={6}> {playerOne} </Grid>
+                    <Grid item xs={6}> 
+                        {playerOne} 
+                        {winner == 1?  <TrophyFilled style={{color: '#FFD700'}}/> : <></>} 
+                    </Grid>
                     {player1Points.map((setPoint) =>
                         <Grid item xs={1}> {setPoint} </Grid>
                     )}
 
-                    <Grid item xs={6}> {playerTwo} </Grid>
+                    <Grid item xs={6}> 
+                        {playerTwo} 
+                        {winner == 2?   <TrophyFilled style={{color: '#FFD700'}}/> : <></>}    
+                    </Grid>
                     {player2Points.map((setPoint) =>
                         <Grid item xs={1}> {setPoint} </Grid>
                     )}

@@ -1,4 +1,4 @@
-//contains finished, current and upcoming games
+//contains finished, current and upcoming games SHIFT mellan dessa
 
 import React from 'react';
 
@@ -27,7 +27,7 @@ export default function SchedulePage() {
             class: "P12",
             player1: "Aleksandar Mitic",
             player2: "Oskar Nehlin",
-            winner: 2,
+            winner: 1,
             result: "7-6 3-6 6-4",
         },
         {
