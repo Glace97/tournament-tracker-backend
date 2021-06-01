@@ -7,6 +7,7 @@ import { Paper, Tabs, Tab } from '@material-ui/core';
 //components
 import FinishedGame from './FinishedGame';
 import CurrentGame from './CurrentGame';
+import ScheduledGame from './ScheduledGame';
 
 //contains finished, current and upcoming games
 export default function SchedulePage() {
@@ -59,6 +60,35 @@ export default function SchedulePage() {
         court: "Bana 3",
     }];
 
+    const scheduled = [
+        {
+          class: "P12",
+          player1: "Aleksandar Mitic",
+          player1_arrived: true,
+          player2_arrived: true,
+          player2: "Oskar Nehlin",
+          court: "Andra lediga",
+          start_time: "2020-03-20:12:32"
+        },
+        {
+          class: "P12",
+          player1: "Aleksandar Mitic",
+          player1_arrived: true,
+          player2_arrived: false,
+          player2: "Oskar Nehlin",
+          court: "Andra lediga",
+          start_time: "2020-03-20:12:32"
+        },
+        {
+          class: "P12",
+          player1: "Aleksandar Mitic",
+          player1_arrived: false,
+          player2_arrived: true,
+          player2: "Oskar Nehlin",
+          court: "Andra lediga",
+          start_time: "2020-03-20:12:32"
+        }]
+
     return (
         <>
             <Paper>
@@ -75,7 +105,7 @@ export default function SchedulePage() {
                 </Tabs>
             </Paper>
 
-            {/*only display games for specified tab*/}
+            {/*conditionally render based on specified tab*/}
             {value == 0 ?
                 finished.map((finishedGame) =>
                     <FinishedGame
@@ -96,7 +126,22 @@ export default function SchedulePage() {
                         court={currentGame.court}
                         league={currentGame.class}
                     />
-                 ) : null}
+                 ) : null
+            }
+
+            {value == 2 ? 
+                scheduled.map((scheduledGame) => 
+                    <ScheduledGame 
+                        player1={scheduledGame.player1}
+                        player2={scheduledGame.player2}
+                        court={scheduledGame.court}
+                        player1Arrived={scheduledGame.player1_arrived}
+                        player2Arrived={scheduledGame.player2_arrived}
+                        league={scheduledGame.class}
+                        startTime={scheduledGame.start_time}
+                    />
+                ) : null 
+            }
         </>
     );
 }

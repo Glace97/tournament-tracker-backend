@@ -41,7 +41,7 @@ export default function Game({ playerOne, playerTwo, league, winner, result }) {
                 <Grid container spacing={12} justify="space-between">
                     <Grid item xs={6}> 
                         <Typography>
-                            {league}
+                           Class: {league}
                         </Typography>  
                     </Grid>
                     
