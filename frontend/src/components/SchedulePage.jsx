@@ -9,6 +9,9 @@ import FinishedGame from './FinishedGame';
 import CurrentGame from './CurrentGame';
 import ScheduledGame from './ScheduledGame';
 
+//to do: update page on scroll down
+
+
 //contains finished, current and upcoming games
 export default function SchedulePage() {
 
