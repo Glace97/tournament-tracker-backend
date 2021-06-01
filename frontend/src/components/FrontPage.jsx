@@ -19,7 +19,7 @@ export default function FrontPage() {
             <Grid container spacing={2} alignItems="center" direction="column">
                 <Grid item xs={12} alignItems="center">
                     {/*Some extra padding for style*/}
-                    <div style={{marginTop: '120px', marginBottom: '430px'}}> 
+                    <div style={{marginTop: '120px', marginBottom: '335px'}}> 
                         <GenericTitle title="Tournament Tracker"/>
                     </div>
                 </Grid>

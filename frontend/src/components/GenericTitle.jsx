@@ -13,7 +13,7 @@ export default function GenericTitle({title}) {
             <Typography
                 variant="h4"
                 align="centered"
-                color="secondary"
+                style={{color: '#ffffff'}}
             >
                 {title}
                 <SportsTennisIcon

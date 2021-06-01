@@ -11,6 +11,7 @@ export default function FrontPageButtons({link, title}) {
     return (
         <>
             <Grid item xs={12} alignItems="center">
+           
                 <Button 
                     variant="contained" 
                     color="primary" 

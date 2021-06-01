@@ -13,7 +13,7 @@ import GenericTitle from './GenericTitle';
 import Tournament from './Tournament';
 
 //material ui components
-import { Grid, List, ListItem } from '@material-ui/core'
+import { Grid, List, ListItem, Typography } from '@material-ui/core'
 
 
 
@@ -36,6 +36,11 @@ export default function TournamentPage() {
             <Grid container spacing={2} alignItems="center" direction="column">
                 <Grid item xs={12} alignItems="center">
                     <GenericTitle title="Tournament Tracker"/>
+                </Grid>
+                <Grid item xs={12} alignItems="center">
+                    <Typography variant="h4" style={{color: '#ffffff'}}>
+                        Select a tournament
+                    </Typography>
                 </Grid>
                 <Grid item xs={12} alignItems="center">
                     {tournaments.map((tournament) => 
