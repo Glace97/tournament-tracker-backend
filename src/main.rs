@@ -20,10 +20,16 @@ async fn main() -> io::Result<()> {
         .await
         .expect("Failed to connect to database");
 
-    sqlx::migrate!("./migrations")
+    match sqlx::migrate!("./migrations")
+    .run(&connection_pool)
+    .await {
+        Ok(_) => tracing::info!("Migration complete!"),
+        Err(err) => tracing::error!("Error: {}", err),
+    } 
+    /*sqlx::migrate!("./migrations")
         .run(&connection_pool)
         .await
-        .expect("Failed to migrate the database");
+        .expect("Failed to migrate the database");*/
 
     let listener = TcpListener::bind(format!(
         "{}:{}",

@@ -14,6 +14,13 @@ import { Grid, Button, Typography } from '@material-ui/core';
 //Ändra färg och font på tournamentracker, ser weird ut i full screen
 
 export default function FrontPage() {
+    fetch("127.0.0.1/tournaments")
+        .then(res => res.json())
+        .then((result) => {
+            console.log(result);
+        },(error) => {
+            console.log("error: " + error);
+        });
     return (
         <div class="background">
             <Grid container spacing={2} alignItems="center" direction="column">

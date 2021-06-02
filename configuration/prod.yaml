@@ -1,5 +1,6 @@
 application:
   host: 0.0.0.0
+  private_key: "c2Rsa2ZqYWxza2pkZmzDtmFranNkZmxramFsc2RrZmphbHNrZGpmbGthc2pkZmxrYXNqZGZsa2pzZGxma2pzbGRrZmo="
 database:
   # Qovery doesn't seem to support it....
   require_ssl: false

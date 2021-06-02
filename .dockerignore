@@ -4,6 +4,7 @@ tests/
 Dockerfile
 scripts/
 coverage/
+frontend/
 .vscode/
 .idea/
 .github/
